@@ -63,7 +63,7 @@ const Navbar: React.FC<NavbarProps> = ({ forceSolid }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24">
             <div className="flex items-center">
-              
+              <a
                 href="/"
                 className="flex items-center gap-2 group"
                 onClick={(e) => handleLinkClick(e, '/')}
@@ -87,7 +87,7 @@ const Navbar: React.FC<NavbarProps> = ({ forceSolid }) => {
               </a>
 
               {navLinks.map((link) => (
-                
+                <a
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href, link.isModal)}
@@ -100,14 +100,14 @@ const Navbar: React.FC<NavbarProps> = ({ forceSolid }) => {
             </div>
 
             <div className="hidden md:flex items-center gap-6">
-              
+              <a
                 href="tel:3518302839"
                 className="flex items-center gap-2 text-white/60 hover:text-white text-sm transition-colors font-medium"
               >
                 <Phone className="w-4 h-4 text-blue-500" />
                 <span>351 830 2839</span>
               </a>
-              
+              <a
                 href="/#contatti"
                 onClick={(e) => handleLinkClick(e, '/#contatti')}
                 className="bg-[#FFBF00] text-black font-black px-8 py-3 rounded-full text-xs uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,191,0,0.6)] hover:scale-105 active:scale-95"
@@ -131,7 +131,7 @@ const Navbar: React.FC<NavbarProps> = ({ forceSolid }) => {
           }`}
         >
           <div className="px-6 py-10 space-y-6">
-            
+            <a
               href="/"
               onClick={(e) => handleLinkClick(e, '/')}
               className="flex items-center gap-3 text-white hover:text-[#00D1FF] text-xl font-black uppercase tracking-tighter transition-colors"
@@ -139,7 +139,7 @@ const Navbar: React.FC<NavbarProps> = ({ forceSolid }) => {
               <Home className="w-6 h-6" /> Home
             </a>
             {navLinks.map((link) => (
-              
+              <a
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href, link.isModal)}
@@ -149,14 +149,14 @@ const Navbar: React.FC<NavbarProps> = ({ forceSolid }) => {
               </a>
             ))}
             <div className="pt-8 border-t border-white/10 space-y-6">
-              
+              <a
                 href="tel:3518302839"
                 className="flex items-center gap-3 text-white/70 hover:text-white text-lg font-medium"
               >
                 <Phone className="w-5 h-5 text-blue-500" />
                 <span>351 830 2839</span>
               </a>
-              
+              <a
                 href="/#contatti"
                 onClick={(e) => handleLinkClick(e, '/#contatti')}
                 className="block w-full text-center bg-[#FFBF00] text-black font-black py-5 rounded-2xl text-lg uppercase tracking-widest active:scale-95 transition-transform"
