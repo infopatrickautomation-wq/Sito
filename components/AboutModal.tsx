@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Check, Clock, Target, TrendingUp } from 'lucide-react';
+import { X, Check, Clock, Target, TrendingUp, Users, Heart, Rocket } from 'lucide-react';
 
 interface AboutModalProps {
   isOpen: boolean;
@@ -9,10 +9,28 @@ interface AboutModalProps {
 const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
-  const benefits = [
-    { icon: Clock, title: 'Risparmio Tempo', description: 'Automatizza task ripetitivi e recupera ore preziose ogni giorno.' },
-    { icon: Target, title: 'Precisione', description: 'Elimina errori umani e garantisci risultati sempre accurati.' },
-    { icon: TrendingUp, title: 'Scalabilità', description: 'Cresci senza limiti, i tuoi processi si adattano automaticamente.' },
+  const values = [
+    { 
+      icon: Heart, 
+      title: 'Approccio Umano', 
+      description: 'Non sono un esperto tecnico, sono uno che vuole aiutare. Lavoriamo insieme, passo dopo passo.' 
+    },
+    { 
+      icon: Users, 
+      title: 'Relazione Autentica', 
+      description: 'Creo un percorso piacevole e sicuro con le aziende. Nessun tecnicismo inutile, solo soluzioni concrete.' 
+    },
+    { 
+      icon: Rocket, 
+      title: 'Tecnologia Accessibile', 
+      description: 'Oggi tutti possono creare qualcosa grazie agli strumenti giusti. Ti mostro come.' 
+    },
+  ];
+
+  const results = [
+    { icon: Clock, text: 'Risparmio Tempo reale e misurabile' },
+    { icon: Target, text: 'Zero errori nei processi ripetitivi' },
+    { icon: TrendingUp, text: 'Crescita senza limiti di risorse' },
   ];
 
   return (
@@ -34,56 +52,73 @@ const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
 
         {/* Content */}
         <div className="p-8 md:p-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left Column */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-montserrat uppercase tracking-tight">
-                Trasformo il tuo modo di <span className="text-blue-600">lavorare con l'AI</span>
-              </h2>
-              <div className="space-y-6 text-[#E6E8EB] text-lg leading-relaxed mb-10">
-                <p>
-                  Mi chiamo <strong className="text-white">Patrick Boccia</strong> e sono uno 
-                  specialista in automazione e ottimizzazione dei processi aziendali. 
-                </p>
-                <p>
-                  Attraverso l'integrazione di sistemi automatici e intelligenza artificiale, 
-                  permetto di risparmiare tempo prezioso e concentrarsi su ciò che conta davvero: far crescere il business.
-                </p>
-              </div>
-              <div className="space-y-4">
-                {['Analisi personalizzata', 'Soluzioni su misura', 'Formazione e supporto', 'Integrazione seamless'].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#3D52A0]/20 flex items-center justify-center">
-                      <Check className="w-4 h-4 text-[#FFBF00]" />
-                    </div>
-                    <span className="text-[#E6E8EB]">{item}</span>
-                  </div>
-                ))}
-              </div>
+          {/* Story Section */}
+          <div className="mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-montserrat uppercase tracking-tight">
+              Da <span className="text-blue-600">appassionato</span> a <span className="text-[#FFBF00]">imprenditore digitale</span>
+            </h2>
+            <div className="space-y-6 text-[#E6E8EB] text-lg leading-relaxed">
+              <p>
+                Mi chiamo <strong className="text-white">Patrick Boccia</strong> e sono un appassionato di tecnologia che ha sempre sognato di diventare un imprenditore digitale.
+              </p>
+              <p>
+                Oggi, grazie a strumenti come <strong className="text-blue-400">n8n</strong> e <strong className="text-blue-400">l'intelligenza artificiale</strong>, mi sono reso conto che <strong className="text-[#FFBF00]">tutti possiamo creare qualcosa di concreto</strong>, anche senza essere programmatori esperti.
+              </p>
+              <p>
+                Ho fondato <strong className="text-white">PatrickAi Automation</strong> con una missione chiara: aiutare <strong className="text-white">ristoranti e hotel</strong> a risparmiare tempo prezioso attraverso automazioni intelligenti, lavorando fianco a fianco con un approccio naturale e umano.
+              </p>
             </div>
+          </div>
 
-            {/* Right Column */}
-            <div className="space-y-6">
-              {benefits.map((b, i) => (
+          {/* Values Grid */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-white mb-6 uppercase tracking-tight">Il mio approccio</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              {values.map((v, i) => (
                 <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-600/30 transition-all">
-                  <div className="flex gap-4 items-start">
-                    <div className="p-3 rounded-xl bg-blue-600/10 text-[#FFBF00]">
-                      <b.icon className="w-7 h-7" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-white mb-2">{b.title}</h3>
-                      <p className="text-white/60 text-sm">{b.description}</p>
-                    </div>
+                  <div className="p-3 rounded-xl bg-blue-600/10 text-[#FFBF00] w-fit mb-4">
+                    <v.icon className="w-7 h-7" />
                   </div>
+                  <h4 className="text-lg font-bold text-white mb-2">{v.title}</h4>
+                  <p className="text-white/60 text-sm leading-relaxed">{v.description}</p>
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Results */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-white mb-6 uppercase tracking-tight">Cosa ottieni</h3>
+            <div className="space-y-4">
+              {results.map((r, i) => (
+                <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+                  <div className="p-2 rounded-lg bg-[#FFBF00]/10">
+                    <r.icon className="w-5 h-5 text-[#FFBF00]" />
+                  </div>
+                  <span className="text-[#E6E8EB] text-lg">{r.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Vision */}
+          <div className="p-8 rounded-2xl bg-gradient-to-br from-blue-600/10 to-[#FFBF00]/10 border border-blue-600/20">
+            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <Rocket className="w-6 h-6 text-[#FFBF00]" />
+              La mia visione
+            </h3>
+            <p className="text-[#E6E8EB] leading-relaxed">
+              Voglio costruire un'agenzia con <strong className="text-white">5-10 clienti fissi</strong>, 
+              crescere insieme a loro ed esplorare nuove esperienze nel mondo dell'automazione. 
+              Non mi presento come un esperto tecnico, ma come qualcuno che vuole davvero <strong className="text-[#FFBF00]">aiutare 
+              e integrare soluzioni</strong> che fanno la differenza nella vita quotidiana delle aziende.
+            </p>
           </div>
         </div>
 
         {/* Footer CTA */}
         <div className="sticky bottom-0 bg-gradient-to-t from-[#0A0A0A] to-transparent p-6 border-t border-white/10">
-          <div className="flex justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             
               href="/#contatti"
               onClick={onClose}
@@ -91,6 +126,7 @@ const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
             >
               Prenota una Call
             </a>
+            <p className="text-white/50 text-sm">Costruiamo insieme il tuo percorso di automazione</p>
           </div>
         </div>
       </div>
