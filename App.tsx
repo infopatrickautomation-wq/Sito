@@ -41,7 +41,7 @@ const App: React.FC = () => {
           onOpenVoiceAgent={handleOpenVoice}
         />
         <CaseStudies />
-        <About />
+        
         <Contact />
       </main>
       <Footer />
