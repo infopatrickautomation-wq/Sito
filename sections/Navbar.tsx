@@ -33,7 +33,6 @@ const Navbar: React.FC<NavbarProps> = ({ forceSolid }) => {
       return;
     }
 
-    // Se il link è un'ancora sulla stessa pagina
     if (href.startsWith('/#')) {
       const id = href.replace('/', '');
       const element = document.querySelector(id);
@@ -63,7 +62,6 @@ const Navbar: React.FC<NavbarProps> = ({ forceSolid }) => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24">
-            {/* Logo Group */}
             <div className="flex items-center">
               
                 href="/"
@@ -78,9 +76,7 @@ const Navbar: React.FC<NavbarProps> = ({ forceSolid }) => {
               </a>
             </div>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-10">
-              {/* Home Icon integrata nel menu con spaziatura coerente */}
               <a 
                 href="/" 
                 onClick={(e) => handleLinkClick(e, '/')}
@@ -103,7 +99,6 @@ const Navbar: React.FC<NavbarProps> = ({ forceSolid }) => {
               ))}
             </div>
 
-            {/* CTA Button */}
             <div className="hidden md:flex items-center gap-6">
               
                 href="tel:3518302839"
@@ -121,7 +116,6 @@ const Navbar: React.FC<NavbarProps> = ({ forceSolid }) => {
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               className="md:hidden text-white p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -131,7 +125,6 @@ const Navbar: React.FC<NavbarProps> = ({ forceSolid }) => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         <div
           className={`md:hidden absolute top-full left-0 right-0 bg-[#050505]/98 backdrop-blur-2xl border-b border-white/5 transition-all duration-300 ${
             isMobileMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-4'
@@ -175,7 +168,6 @@ const Navbar: React.FC<NavbarProps> = ({ forceSolid }) => {
         </div>
       </nav>
 
-      {/* About Modal */}
       <AboutModal isOpen={isAboutModalOpen} onClose={() => setIsAboutModalOpen(false)} />
     </>
   );
