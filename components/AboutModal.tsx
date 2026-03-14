@@ -119,7 +119,7 @@ const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
         {/* Footer CTA */}
         <div className="sticky bottom-0 bg-gradient-to-t from-[#0A0A0A] to-transparent p-6 border-t border-white/10">
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            
+            <a
               href="/#contatti"
               onClick={onClose}
               className="bg-[#FFBF00] text-black font-black px-10 py-4 rounded-full text-sm uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,191,0,0.6)] hover:scale-105 active:scale-95"
